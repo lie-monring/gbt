@@ -2,6 +2,21 @@ import { app, BrowserWindow, ipcMain, dialog } from 'electron'
 import path from 'path'
 import fs from 'fs'
 
+function findGit(): string {
+  const candidates = [
+    'D:\\download\\Git\\cmd\\git.exe',
+    'C:\\Program Files\\Git\\cmd\\git.exe',
+    'C:\\Program Files\\Git\\bin\\git.exe',
+    'C:\\Program Files (x86)\\Git\\cmd\\git.exe',
+    path.join(process.env.LOCALAPPDATA || '', 'Programs', 'Git', 'cmd', 'git.exe'),
+  ]
+  for (const c of candidates) {
+    if (fs.existsSync(c)) return c
+  }
+  return 'git'
+}
+const GIT_BINARY = findGit()
+
 let mainWindow: BrowserWindow | null = null
 
 function createWindow() {
@@ -50,7 +65,7 @@ ipcMain.handle('fs:fileExists', async (_event, filePath: string) => {
 
 ipcMain.handle('git:execute', async (_event, repoPath: string, args: string[]) => {
   const { simpleGit } = await import('simple-git')
-  const git = simpleGit(repoPath)
+  const git = simpleGit({ baseDir: repoPath, binary: GIT_BINARY })
   // We forward raw git commands through simple-git's raw method
   try {
     const result = await git.raw(args)
