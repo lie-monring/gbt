@@ -19,6 +19,26 @@
     "simple-git": "^3.27.0",
     "zustand": "^5.0.3"
   },
+  "build": {
+    "appId": "com.gbt.app",
+    "productName": "GBT",
+    "directories": {
+      "output": "release"
+    },
+    "forceCodeSigning": false,
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "icon": null,
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
   "devDependencies": {
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",

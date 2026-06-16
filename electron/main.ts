@@ -1,10 +1,19 @@
 import { app, BrowserWindow, ipcMain, dialog } from 'electron'
 import path from 'path'
 import fs from 'fs'
+import { execSync } from 'child_process'
 
 function findGit(): string {
+  // 1. Try PATH via `where git` (Windows) or `which git` (Unix)
+  try {
+    const cmd = process.platform === 'win32' ? 'where git' : 'which git'
+    const result = execSync(cmd, { encoding: 'utf-8' }).trim()
+    const resolved = result.split('\r\n')[0].split('\n')[0].trim()
+    if (resolved && fs.existsSync(resolved)) return resolved
+  } catch { /* not in PATH, fall through */ }
+
+  // 2. Check common install locations
   const candidates = [
-    'D:\\download\\Git\\cmd\\git.exe',
     'C:\\Program Files\\Git\\cmd\\git.exe',
     'C:\\Program Files\\Git\\bin\\git.exe',
     'C:\\Program Files (x86)\\Git\\cmd\\git.exe',
@@ -13,6 +22,8 @@ function findGit(): string {
   for (const c of candidates) {
     if (fs.existsSync(c)) return c
   }
+
+  // 3. Last resort: hope `git` is on PATH
   return 'git'
 }
 const GIT_BINARY = findGit()
