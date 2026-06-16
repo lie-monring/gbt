@@ -22,12 +22,12 @@ Most Git GUIs bury the branch graph behind menus and panels. GBT makes it the he
 
 ### Download (Windows)
 
-Go to [Releases](https://github.com/YOUR_USERNAME/gbt/releases) and download `GBT.exe`.
+Go to [Releases](https://github.com/lie-monring/gbt/releases) and download `GBT.exe`.
 
 ### Or run from source
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/gbt.git
+git clone https://github.com/lie-monring/gbt.git
 cd gbt
 npm install
 npm run dev
