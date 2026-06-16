@@ -13,24 +13,18 @@ export function BottomBar() {
 
   if (!repoPath) return null
 
-  const handleRefresh = async () => {
-    await refreshBranches()
-    await refreshStatus()
-  }
-
   return (
-    <footer className="flex items-center justify-center gap-4 h-10 px-3 bg-surface-raised border-t border-white/5">
+    <footer className="flex items-center justify-center gap-4 h-10 px-3 bg-[#1a1d27] border-t border-white/5">
       <button
         onClick={() => setCommitPanelOpen(true)}
-        className="flex items-center gap-1.5 px-4 py-1 text-sm text-white bg-accent hover:bg-accent-hover rounded-md transition-colors"
+        className="flex items-center gap-1.5 px-4 py-1 text-sm text-white bg-[#6c8cf5] hover:bg-[#8aa4ff] rounded-md transition-colors"
       >
         <span>⊕</span>
         <span>{t('bottombar.commit')}</span>
       </button>
-
       <button
-        className="flex items-center gap-1.5 px-4 py-1 text-sm text-muted hover:text-white rounded-md hover:bg-white/5 transition-colors"
-        onClick={handleRefresh}
+        onClick={async () => { await refreshBranches(); await refreshStatus() }}
+        className="flex items-center gap-1.5 px-4 py-1 text-sm text-[#8b8fa3] hover:text-white rounded-md hover:bg-white/5 transition-colors"
       >
         <span>↻</span>
         <span>Refresh</span>

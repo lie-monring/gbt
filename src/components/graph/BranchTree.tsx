@@ -106,7 +106,7 @@ export function BranchTree() {
   if (!repoPath || isLoading || logLoading) {
     return (
       <div className="flex items-center justify-center h-full">
-        <p className="text-muted text-sm animate-fade-in">Loading branch tree...</p>
+        <p className="text-gray-400 dark:text-[#8b8fa3] text-sm animate-fade-in">Loading branch tree...</p>
       </div>
     )
   }
@@ -211,15 +211,7 @@ export function BranchTree() {
         {/* Tooltip (in screen space, not affected by zoom/pan) */}
         {tooltip && (
           <g transform={`translate(${tooltip.x + 12},${tooltip.y - 12})`}>
-            <rect
-              x={0} y={-20}
-              width={300} height={56}
-              rx={6}
-              fill="#1a1d27"
-              stroke="#2a2d37"
-              strokeWidth={1}
-              opacity={0.95}
-            />
+            <rect x={0} y={-20} width={300} height={56} rx={6} fill="#1a1d27" stroke="#2a2d37" strokeWidth={1} opacity={0.95} />
             <text x={8} y={-2} fill="#f8f9fa" fontSize={12} fontWeight={500}>
               {tooltip.node.subject.slice(0, 50)}
             </text>

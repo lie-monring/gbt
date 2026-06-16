@@ -76,6 +76,10 @@ ipcMain.handle('git:execute', async (_event, repoPath: string, args: string[]) =
   }
 })
 
+ipcMain.handle('window:close', () => {
+  mainWindow?.close()
+})
+
 // ── App Lifecycle ──────────────────────────────────────────
 
 app.whenReady().then(() => {

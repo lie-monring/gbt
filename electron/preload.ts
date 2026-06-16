@@ -16,6 +16,9 @@ const api = {
   /** Execute a raw git command via simple-git */
   gitRaw: (repoPath: string, args: string[]): Promise<GitResult> =>
     ipcRenderer.invoke('git:execute', repoPath, args),
+
+  /** Close the app window */
+  closeWindow: (): Promise<void> => ipcRenderer.invoke('window:close'),
 }
 
 contextBridge.exposeInMainWorld('gbt', api)
