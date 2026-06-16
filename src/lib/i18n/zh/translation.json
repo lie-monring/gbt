@@ -1,0 +1,80 @@
+{
+  "title": "GBT — Git 分支树",
+
+  "topbar": {
+    "openRepo": "打开仓库",
+    "noRepo": "未打开仓库",
+    "language": "语言",
+    "theme": "切换主题"
+  },
+
+  "bottombar": {
+    "commit": "提交",
+    "undo": "撤销",
+    "pull": "拉取",
+    "push": "推送"
+  },
+
+  "tree": {
+    "loading": "正在加载分支树...",
+    "empty": "暂无提交",
+    "loadMore": "加载更多",
+    "zoomIn": "放大",
+    "zoomOut": "缩小",
+    "resetView": "重置视图"
+  },
+
+  "commit": {
+    "title": "提交更改",
+    "message": "提交信息",
+    "messagePlaceholder": "描述你的更改...",
+    "files": "已更改文件",
+    "stageAll": "全部暂存",
+    "unstageAll": "全部取消暂存",
+    "noChanges": "没有可提交的内容",
+    "commitButton": "提交",
+    "committed": "提交成功"
+  },
+
+  "detail": {
+    "title": "提交详情",
+    "hash": "哈希值",
+    "author": "作者",
+    "date": "日期",
+    "message": "提交信息",
+    "filesChanged": "变更文件",
+    "checkoutHere": "回到这个提交",
+    "branchHere": "在此创建分支",
+    "revertThis": "还原此提交"
+  },
+
+  "history": {
+    "title": "操作历史",
+    "empty": "暂无操作记录",
+    "undo": "撤销",
+    "redo": "重做",
+    "undone": "已撤销",
+    "confirmUndo": "撤销此操作？",
+    "confirmUndoDesc": "将回退以下操作："
+  },
+
+  "branch": {
+    "create": "创建分支",
+    "delete": "删除分支",
+    "merge": "合并",
+    "mergeConfirm": "将 {{source}} 合并到 {{target}}？",
+    "deleteConfirm": "删除分支 {{name}}？",
+    "current": "当前"
+  },
+
+  "common": {
+    "cancel": "取消",
+    "confirm": "确认",
+    "close": "关闭",
+    "error": "错误",
+    "warning": "警告",
+    "success": "成功",
+    "loading": "加载中...",
+    "noData": "暂无数据"
+  }
+}

@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ─────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans SC", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 143, 163, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 143, 163, 0.5);
+}
+
+/* ── SVG Graph ─────────────────────────── */
+.commit-dot {
+  cursor: pointer;
+  transition: r 0.15s ease-out, filter 0.15s ease-out;
+}
+
+.commit-dot:hover {
+  filter: brightness(1.3);
+}
+
+.commit-dot.selected {
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.branch-line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.branch-label {
+  cursor: grab;
+  user-select: none;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.branch-label:active {
+  cursor: grabbing;
+}
+
+.branch-label.drag-over {
+  filter: drop-shadow(0 0 8px currentColor);
+}
