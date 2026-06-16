@@ -6,17 +6,24 @@ A minimalist Git GUI that puts your branch tree front and center. Built with Ele
 
 ## Why?
 
-Most Git GUIs bury the branch graph behind menus and panels. GBT makes it the hero — open a repo and you immediately see your full branch structure, beautifully rendered. Click to explore, commit, and navigate history with minimal friction.
+Most Git GUIs bury the branch graph behind menus and panels. GBT makes it the hero — open a repo and you immediately see your full branch structure. Click to explore, commit, revert, and navigate history with zero friction.
 
 ## Features
 
-- **Interactive branch tree** — Full commit graph as an SVG canvas. Pan, zoom, hover for details.
-- **Minimal interface** — Top bar, branch tree, bottom bar with 2 buttons. That's it.
-- **Click to explore** — Click any commit → slide-in detail panel with diff stats. Double-click → checkout.
-- **Drag-free simplicity** — Click branch labels to switch branches. Right-click for options.
-- **Built-in commit panel** — Stage files, write message, commit. Slides away when done.
-- **Bilingual** — English / 中文 toggle in the top bar.
-- **Real Git** — Uses the git CLI under the hood. All your normal git workflow works.
+- **Interactive branch tree** — Full commit graph as SVG. Pan, zoom, hover for details.
+- **Minimal interface** — Top bar, branch tree, 2 buttons. No menus, no clutter.
+- **Commit panel** — Stage files, write message, commit. Auto-refreshes on completion.
+- **Commit details** — Click a node → diff stats, author, date. Double-click → checkout.
+- **Revert guard** — Revert a commit with one click. Already-reverted commits hide the button.
+- **Auto git init** — Opening a non-Git folder prompts to `git init` with one click.
+- **Bilingual** — English / 中文. Every string switches instantly.
+- **Help modal** — Press `?` for keyboard shortcuts and usage tips.
+- **Window controls** — Minimize & close buttons. Right-click folder → "Open with GBT" (run `scripts/install-context-menu.reg`).
+- **Real Git** — Uses the git CLI under the hood. All normal workflows work.
+
+## Screenshots
+
+> TODO: add screenshots of branch tree, commit panel, and detail panel
 
 ## Install
 
@@ -24,7 +31,7 @@ Most Git GUIs bury the branch graph behind menus and panels. GBT makes it the he
 
 Go to [Releases](https://github.com/lie-monring/gbt/releases) and download `GBT.exe`.
 
-### Or run from source
+### Run from source
 
 ```bash
 git clone https://github.com/lie-monring/gbt.git
@@ -56,14 +63,15 @@ gbt/
 ├── src/
 │   ├── components/
 │   │   ├── graph/     # Branch tree SVG rendering
-│   │   ├── panels/    # Slide-in panels (commit, detail, history)
+│   │   ├── panels/    # Slide-in panels (commit, detail)
 │   │   └── layout/    # TopBar, BottomBar
 │   ├── hooks/         # Git operation hooks
 │   ├── stores/        # Zustand state stores
 │   ├── lib/
 │   │   ├── graph/     # Layout algorithm
-│   │   └── i18n/      # Translations
+│   │   └── i18n/      # Translations (en + zh)
 │   └── styles/
+├── scripts/           # Context menu installer
 └── resources/         # App icons
 ```
 
