@@ -15,11 +15,14 @@ export function useGitStatus() {
       .trim()
       .split('\n')
       .filter(Boolean)
-      .map((line) => ({
-        index: line[0] ?? ' ',
-        workingTree: line[1] ?? ' ',
-        path: line.slice(3).trim(),
-      }))
+      .map((line) => {
+        const match = line.match(/^(.?)(.?)\s+(.+)/)
+        return {
+          index: match?.[1] || ' ',
+          workingTree: match?.[2] || ' ',
+          path: match?.[3]?.trim() || line.slice(3).trim(),
+        }
+      })
 
     setFileStatuses(files)
   }, [repoPath, setFileStatuses])
