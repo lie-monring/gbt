@@ -17,6 +17,13 @@ function findGit(): string {
 }
 const GIT_BINARY = findGit()
 
+// Store folder path passed via command line (for right-click context menu)
+let startupFolder: string | null = null
+const cliArg = process.argv.find((a) => !a.startsWith('-') && a !== process.argv[0] && a !== process.execPath && !a.includes('electron'))
+if (cliArg && fs.existsSync(cliArg)) {
+  startupFolder = cliArg
+}
+
 let mainWindow: BrowserWindow | null = null
 
 function createWindow() {
@@ -78,6 +85,14 @@ ipcMain.handle('git:execute', async (_event, repoPath: string, args: string[]) =
 
 ipcMain.handle('window:close', () => {
   mainWindow?.close()
+})
+
+ipcMain.handle('window:minimize', () => {
+  mainWindow?.minimize()
+})
+
+ipcMain.handle('app:startupPath', () => {
+  return startupFolder
 })
 
 // ── App Lifecycle ──────────────────────────────────────────

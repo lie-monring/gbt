@@ -1,80 +1,67 @@
 {
-  "title": "GBT — Git Branch Tree",
-
+  "welcome": {
+    "title": "Open a Git repository to see your branch tree",
+    "subtitle": "Click the folder icon in the top bar to get started"
+  },
   "topbar": {
     "openRepo": "Open Repository",
-    "noRepo": "No repository open",
-    "language": "Language",
-    "theme": "Toggle Theme"
+    "noRepo": "No repository open"
   },
-
   "bottombar": {
     "commit": "Commit",
-    "undo": "Undo",
-    "pull": "Pull",
-    "push": "Push"
+    "refresh": "Refresh"
   },
-
   "tree": {
     "loading": "Loading branch tree...",
-    "empty": "No commits yet",
-    "loadMore": "Load more",
-    "zoomIn": "Zoom in",
-    "zoomOut": "Zoom out",
-    "resetView": "Reset view"
+    "empty": "No commits yet in this repository."
   },
-
   "commit": {
     "title": "Commit Changes",
-    "message": "Commit message",
     "messagePlaceholder": "Describe your changes...",
-    "files": "Changed files",
-    "stageAll": "Stage all",
-    "unstageAll": "Unstage all",
     "noChanges": "Nothing to commit",
     "commitButton": "Commit",
-    "committed": "Committed successfully"
+    "committed": "Committed!",
+    "gitAddFailed": "git add failed:",
+    "commitFailed": "Commit failed"
   },
-
   "detail": {
     "title": "Commit Details",
     "hash": "Hash",
     "author": "Author",
     "date": "Date",
-    "message": "Message",
-    "filesChanged": "Files changed",
-    "checkoutHere": "Go back to this commit",
-    "branchHere": "Create branch here",
-    "revertThis": "Revert this commit"
-  },
-
-  "history": {
-    "title": "Operation History",
-    "empty": "No operations yet",
-    "undo": "Undo",
-    "redo": "Redo",
-    "undone": "Undone",
-    "confirmUndo": "Undo this operation?",
-    "confirmUndoDesc": "This will revert the following action:"
-  },
-
-  "branch": {
-    "create": "Create Branch",
-    "delete": "Delete Branch",
-    "merge": "Merge",
-    "mergeConfirm": "Merge {{source}} into {{target}}?",
-    "deleteConfirm": "Delete branch {{name}}?",
-    "current": "current"
-  },
-
-  "common": {
-    "cancel": "Cancel",
-    "confirm": "Confirm",
-    "close": "Close",
-    "error": "Error",
-    "warning": "Warning",
-    "success": "Success",
+    "parents": "Parents",
+    "goBack": "Go back to this commit",
+    "revert": "Revert this commit",
+    "changedFiles": "Changed Files",
+    "noData": "Select a commit to see details",
     "loading": "Loading...",
-    "noData": "No data"
+    "goBackConfirm": "Go back to commit"
+  },
+  "init": {
+    "confirm": "This folder is not a Git repository. Initialize git here?",
+    "failed": "git init failed:"
+  },
+  "help": {
+    "title": "GBT Help",
+    "nav": "Navigation",
+    "navScroll": "Scroll — Pan vertically/horizontally",
+    "navZoom": "Ctrl+Scroll — Zoom in/out",
+    "navPan": "Shift+Drag — Pan the graph",
+    "commits": "Commits",
+    "commitsClick": "Click a dot — View commit details",
+    "commitsDouble": "Double-click a dot — Checkout that commit",
+    "commitsHover": "Hover a dot — Quick info tooltip",
+    "commitsRevert": "Revert button — Undo a commit (hidden if already reverted)",
+    "branches": "Branches",
+    "branchesClick": "Click a branch label — Switch to that branch",
+    "buttons": "Buttons",
+    "buttonsCommit": "Commit — Stage files and create a new commit",
+    "buttonsRefresh": "Refresh — Reload branch tree and file status",
+    "tips": "Tips",
+    "tipsInit": "Opening a non-Git folder prompts you to git init",
+    "tipsLang": "Use 中/EN to switch between Chinese and English"
+  },
+  "common": {
+    "close": "Close"
   }
 }

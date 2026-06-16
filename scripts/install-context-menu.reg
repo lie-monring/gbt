@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\shell\GBT]
+@="Open with GBT"
+"Icon"="\"C:\\Users\\zyx\\Desktop\\git ai chage\\release\\win-unpacked\\GBT.exe\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\GBT\command]
+@="\"C:\\Users\\zyx\\Desktop\\git ai chage\\release\\win-unpacked\\GBT.exe\" \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\GBT]
+@="Open with GBT"
+"Icon"="\"C:\\Users\\zyx\\Desktop\\git ai chage\\release\\win-unpacked\\GBT.exe\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\GBT\command]
+@="\"C:\\Users\\zyx\\Desktop\\git ai chage\\release\\win-unpacked\\GBT.exe\" \"%V\""

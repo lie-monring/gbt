@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { TopBar } from './components/layout/TopBar'
 import { BottomBar } from './components/layout/BottomBar'
 import { BranchTree } from './components/graph/BranchTree'
@@ -7,6 +8,7 @@ import { HistoryPanel } from './components/panels/HistoryPanel'
 import { useRepoStore } from './stores/repoStore'
 
 export default function App() {
+  const { t } = useTranslation()
   const repoPath = useRepoStore((s) => s.repoPath)
 
   return (
@@ -19,12 +21,8 @@ export default function App() {
           <div className="flex items-center justify-center h-full">
             <div className="text-center space-y-4 animate-fade-in">
               <div className="text-6xl">🌿</div>
-              <h2 className="text-xl font-light text-[#8b8fa3]">
-                Open a Git repository to see your branch tree
-              </h2>
-              <p className="text-sm text-white/20">
-                Click the folder icon in the top bar to get started
-              </p>
+              <h2 className="text-xl font-light text-[#8b8fa3]">{t('welcome.title')}</h2>
+              <p className="text-sm text-white/20">{t('welcome.subtitle')}</p>
             </div>
           </div>
         )}

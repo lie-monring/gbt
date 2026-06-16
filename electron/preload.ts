@@ -19,6 +19,12 @@ const api = {
 
   /** Close the app window */
   closeWindow: (): Promise<void> => ipcRenderer.invoke('window:close'),
+
+  /** Minimize the app window */
+  minimizeWindow: (): Promise<void> => ipcRenderer.invoke('window:minimize'),
+
+  /** Get the folder path passed via command line (for right-click menu) */
+  getStartupPath: (): Promise<string | null> => ipcRenderer.invoke('app:startupPath'),
 }
 
 contextBridge.exposeInMainWorld('gbt', api)

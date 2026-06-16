@@ -27,7 +27,7 @@ export function BottomBar() {
         className="flex items-center gap-1.5 px-4 py-1 text-sm text-[#8b8fa3] hover:text-white rounded-md hover:bg-white/5 transition-colors"
       >
         <span>↻</span>
-        <span>Refresh</span>
+        <span>{t('bottombar.refresh')}</span>
       </button>
     </footer>
   )

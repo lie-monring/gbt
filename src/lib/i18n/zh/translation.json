@@ -1,80 +1,67 @@
 {
-  "title": "GBT — Git 分支树",
-
+  "welcome": {
+    "title": "打开一个 Git 仓库以查看分支树",
+    "subtitle": "点击顶部栏的文件夹图标开始"
+  },
   "topbar": {
     "openRepo": "打开仓库",
-    "noRepo": "未打开仓库",
-    "language": "语言",
-    "theme": "切换主题"
+    "noRepo": "未打开仓库"
   },
-
   "bottombar": {
     "commit": "提交",
-    "undo": "撤销",
-    "pull": "拉取",
-    "push": "推送"
+    "refresh": "刷新"
   },
-
   "tree": {
     "loading": "正在加载分支树...",
-    "empty": "暂无提交",
-    "loadMore": "加载更多",
-    "zoomIn": "放大",
-    "zoomOut": "缩小",
-    "resetView": "重置视图"
+    "empty": "此仓库暂无提交记录"
   },
-
   "commit": {
     "title": "提交更改",
-    "message": "提交信息",
     "messagePlaceholder": "描述你的更改...",
-    "files": "已更改文件",
-    "stageAll": "全部暂存",
-    "unstageAll": "全部取消暂存",
     "noChanges": "没有可提交的内容",
     "commitButton": "提交",
-    "committed": "提交成功"
+    "committed": "提交成功！",
+    "gitAddFailed": "git add 失败：",
+    "commitFailed": "提交失败"
   },
-
   "detail": {
     "title": "提交详情",
     "hash": "哈希值",
     "author": "作者",
     "date": "日期",
-    "message": "提交信息",
-    "filesChanged": "变更文件",
-    "checkoutHere": "回到这个提交",
-    "branchHere": "在此创建分支",
-    "revertThis": "还原此提交"
-  },
-
-  "history": {
-    "title": "操作历史",
-    "empty": "暂无操作记录",
-    "undo": "撤销",
-    "redo": "重做",
-    "undone": "已撤销",
-    "confirmUndo": "撤销此操作？",
-    "confirmUndoDesc": "将回退以下操作："
-  },
-
-  "branch": {
-    "create": "创建分支",
-    "delete": "删除分支",
-    "merge": "合并",
-    "mergeConfirm": "将 {{source}} 合并到 {{target}}？",
-    "deleteConfirm": "删除分支 {{name}}？",
-    "current": "当前"
-  },
-
-  "common": {
-    "cancel": "取消",
-    "confirm": "确认",
-    "close": "关闭",
-    "error": "错误",
-    "warning": "警告",
-    "success": "成功",
+    "parents": "父提交",
+    "goBack": "回到这个提交",
+    "revert": "还原此提交",
+    "changedFiles": "变更文件",
+    "noData": "点击提交节点查看详情",
     "loading": "加载中...",
-    "noData": "暂无数据"
+    "goBackConfirm": "回到提交"
+  },
+  "init": {
+    "confirm": "此文件夹不是 Git 仓库，是否在此初始化 Git？",
+    "failed": "git init 失败："
+  },
+  "help": {
+    "title": "GBT 帮助",
+    "nav": "导航",
+    "navScroll": "滚轮 — 上下左右平移",
+    "navZoom": "Ctrl+滚轮 — 缩放",
+    "navPan": "Shift+拖拽 — 平移视图",
+    "commits": "提交",
+    "commitsClick": "点击圆点 — 查看提交详情",
+    "commitsDouble": "双击圆点 — 切换到此提交",
+    "commitsHover": "悬停圆点 — 快速预览信息",
+    "commitsRevert": "还原按钮 — 撤销提交（已还原的提交不再显示）",
+    "branches": "分支",
+    "branchesClick": "点击分支标签 — 切换到此分支",
+    "buttons": "按钮",
+    "buttonsCommit": "提交 — 暂存文件并创建新提交",
+    "buttonsRefresh": "刷新 — 重新加载分支树和文件状态",
+    "tips": "提示",
+    "tipsInit": "打开非 Git 文件夹时会提示是否初始化",
+    "tipsLang": "使用 中/EN 在中英文之间切换"
+  },
+  "common": {
+    "close": "关闭"
   }
 }
